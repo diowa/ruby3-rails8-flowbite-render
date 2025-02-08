@@ -1,0 +1,51 @@
+databases:
+  - name: ruby3-rails8-flowbite-render-primary-db
+    plan: free
+    databaseName: ruby3_rails8_flowbite_render_production
+    user: ruby3_rails8_flowbite_render
+  - name: ruby3-rails8-flowbite-render-cache-db
+    plan: free
+    databaseName: ruby3_rails8_flowbite_render_production_cache
+    user: ruby3_rails8_flowbite_render
+  - name: ruby3-rails8-flowbite-render-queue-db
+    plan: free
+    databaseName: ruby3_rails8_flowbite_render_production_queue
+    user: ruby3_rails8_flowbite_render
+  - name: ruby3-rails8-flowbite-render-cable-db
+    plan: free
+    databaseName: ruby3_rails8_flowbite_render_production_cable
+    user: ruby3_rails8_flowbite_render
+
+services:
+  - name: ruby3-rails8-flowbite-render
+    plan: free
+    type: web
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
+    healthCheckPath: /up
+    autoDeploy: false
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ruby3-rails8-flowbite-render-primary-db
+          property: connectionString
+      - key: CACHE_DATABASE_URL
+        fromDatabase:
+          name: ruby3-rails8-flowbite-render-cache-db
+          property: connectionString
+      - key: QUEUE_DATABASE_URL
+        fromDatabase:
+          name: ruby3-rails8-flowbite-render-queue-db
+          property: connectionString
+      - key: CABLE_DATABASE_URL
+        fromDatabase:
+          name: ruby3-rails8-flowbite-render-cable-db
+          property: connectionString
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default
