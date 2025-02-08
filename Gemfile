@@ -3,6 +3,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.1"
 
 gem "bootsnap", require: false
+gem "iconmap-rails"
 gem "importmap-rails"
 gem "jbuilder"
 gem "kamal", require: false
@@ -16,6 +17,8 @@ gem "stimulus-rails"
 gem "tailwindcss-rails", "~> 4.0"
 gem "thruster", require: false
 gem "turbo-rails"
+
+gem "inline_svg" # Keep after propshaft. Ref: jamesmartin/inline_svg#151
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
