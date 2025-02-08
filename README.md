@@ -51,18 +51,6 @@ We assume that this application is thread safe. If your application is not threa
 $ heroku config:set RAILS_MAX_THREADS=1
 ```
 
-### Master Key
-
-Rails 5.2 introduced [encrypted credentials](https://edgeguides.rubyonrails.org/5_2_release_notes.html#credentials).
-
-The master key used by this repository is:
-
-```
-02a9ea770b4985659e8ce92699f218dc
-```
-
-**DO NOT SHARE YOUR MASTER KEY. CHANGE THIS MASTER KEY IF YOU ARE GOING TO USE THIS REPO FOR YOUR OWN PROJECT.**
-
 ### Heroku Platform API
 
 This application supports fast setup and deploy via [app.json](https://devcenter.heroku.com/articles/app-json-schema):
