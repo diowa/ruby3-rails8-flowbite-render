@@ -1,0 +1,71 @@
+name: Security Audits
+
+on:
+  schedule:
+    - cron: '30 8 * * 5'
+
+permissions:
+  contents: read
+
+jobs:
+  bundle_audit:
+    name: Bundle audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    concurrency:
+      group: "${{ github.workflow }} / bundle_audit @ ${{ github.ref }}"
+      cancel-in-progress: true
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: .ruby-version
+        bundler-cache: false
+    - name: Bundle audit
+      run: |
+        gem install bundler-audit
+        bundle audit check --update
+
+  bundle_leak:
+    name: Bundle leak
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    concurrency:
+      group: "${{ github.workflow }} / bundle_leak @ ${{ github.ref }}"
+      cancel-in-progress: true
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: .ruby-version
+        bundler-cache: false
+    - name: Bundle leak
+      run: |
+        gem install bundler-leak
+        bundle leak check --update
+
+  importmap_audit:
+    name: importmap audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    concurrency:
+      group: "${{ github.workflow }} / importmap_audit @ ${{ github.ref }}"
+      cancel-in-progress: true
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: .ruby-version
+        bundler-cache: true
+
+    - name: Scan for security vulnerabilities in JavaScript dependencies
+      run: bin/importmap audit

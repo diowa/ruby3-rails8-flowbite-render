@@ -9,17 +9,20 @@ This is an opinionated starter web application based on the following technology
 
 * [Ruby 3.4.1][:ruby-url]
 * [Rails 8.0.1][:ruby-on-rails-url]
+* [Tailwind CSS 4.0.4][:tailwind-css-url]
+* [Flowbite 3.1.1][:flowbite-url]
 * [Puma][:puma-url]
 * [PostgreSQL][:postgresql-url]
 * [RSpec][:rspec-url]
-* [Font Awesome 6.7.2 SVG][:fontawesome-url]
-* [Slim][:slim-url]
+* [Font Awesome SVG (via Iconmap)][:fontawesome-url]
+* ~[Slim][:slim-url]~
 * [RuboCop][:rubocop-url]
 * [RuboCop RSpec][:rubocop-rspec-url]
 * [Slim-Lint][:slim-lint-url]
 * [stylelint][:stylelint-url]
 * [i18n-tasks][:i18n-tasks-url]
 
+[:flowbite-url]: https://flowbite.com/
 [:fontawesome-url]: https://fontawesome.com
 [:i18n-tasks-url]: https://github.com/glebm/i18n-tasks
 [:postgresql-url]: https://www.postgresql.org
@@ -33,6 +36,7 @@ This is an opinionated starter web application based on the following technology
 [:slim-lint-url]: https://github.com/sds/slim-lint
 [:slim-url]: https://slim-lang.com
 [:stylelint-url]: https://stylelint.io
+[:tailwind-css-url]: https://tailwindcss.com/
 [:webpack-url]: https://webpack.js.org
 
 Starter App is deployable on [Heroku](https://www.heroku.com/). Demo: https://ruby3-rails8-flowbite-render.herokuapp.com/
@@ -46,18 +50,6 @@ We assume that this application is thread safe. If your application is not threa
 ```sh
 $ heroku config:set RAILS_MAX_THREADS=1
 ```
-
-### Master Key
-
-Rails 5.2 introduced [encrypted credentials](https://edgeguides.rubyonrails.org/5_2_release_notes.html#credentials).
-
-The master key used by this repository is:
-
-```
-02a9ea770b4985659e8ce92699f218dc
-```
-
-**DO NOT SHARE YOUR MASTER KEY. CHANGE THIS MASTER KEY IF YOU ARE GOING TO USE THIS REPO FOR YOUR OWN PROJECT.**
 
 ### Heroku Platform API
 
