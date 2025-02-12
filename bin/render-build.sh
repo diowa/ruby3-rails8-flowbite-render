@@ -2,6 +2,12 @@
 # exit on error
 set -o errexit
 
+# Multiple Databases. This is not possible with `render.yaml`
+# Ref: https://render.com/docs/postgresql-creating-connecting#adding-multiple-databases-to-a-single-instance
+psql $DATABASE_URL "CREATE DATABASE ruby3_rails8_flowbite_render_production_cache"
+psql $DATABASE_URL "CREATE DATABASE ruby3_rails8_flowbite_render_production_queue"
+psql $DATABASE_URL "CREATE DATABASE ruby3_rails8_flowbite_render_production_cable"
+
 bundle install
 bundle exec rails assets:precompile
 bundle exec rails assets:clean
