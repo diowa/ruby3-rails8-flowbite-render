@@ -81,18 +81,16 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: ruby3_rails8_flowbite_render_production
-    username: ruby3_rails8_flowbite_render
-    password: <%= ENV["RUBY3_RAILS8_FLOWBITE_RENDER_DATABASE_PASSWORD"] %>
+    url: <%= ENV["DATABASE_URL"] %> # Not clear why this is needed by Render
   cache:
     <<: *primary_production
-    database: ruby3_rails8_flowbite_render_production_cache
+    database: <%= ENV["DATABASE_NAME"] %>_cache
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: ruby3_rails8_flowbite_render_production_queue
+    database: <%= ENV["DATABASE_NAME"] %>_queue
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: ruby3_rails8_flowbite_render_production_cable
+    database: <%= ENV["DATABASE_NAME"] %>_cable
     migrations_paths: db/cable_migrate
