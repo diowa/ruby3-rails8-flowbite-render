@@ -15,10 +15,8 @@ This is an opinionated starter web application based on the following technology
 * [PostgreSQL][:postgresql-url]
 * [RSpec][:rspec-url]
 * [Font Awesome SVG (via Iconmap)][:fontawesome-url]
-* ~[Slim][:slim-url]~
 * [RuboCop][:rubocop-url]
 * [RuboCop RSpec][:rubocop-rspec-url]
-* [Slim-Lint][:slim-lint-url]
 * [stylelint][:stylelint-url]
 * [i18n-tasks][:i18n-tasks-url]
 
@@ -32,9 +30,6 @@ This is an opinionated starter web application based on the following technology
 [:rubocop-url]: https://github.com/bbatsov/rubocop
 [:ruby-on-rails-url]: https://rubyonrails.org
 [:ruby-url]: https://www.ruby-lang.org/en/
-[:shakapacker-url]: https://github.com/shakacode/shakapacker
-[:slim-lint-url]: https://github.com/sds/slim-lint
-[:slim-url]: https://slim-lang.com
 [:stylelint-url]: https://stylelint.io
 [:tailwind-css-url]: https://tailwindcss.com/
 [:webpack-url]: https://webpack.js.org
