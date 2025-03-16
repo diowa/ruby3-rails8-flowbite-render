@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '~> 8.0.1'
+gem 'rails', '8.0.2'
 
 gem 'bootsnap', require: false
 gem 'iconmap-rails'
@@ -16,7 +16,7 @@ gem 'solid_cable'
 gem 'solid_cache'
 gem 'solid_queue'
 gem 'stimulus-rails'
-gem 'tailwindcss-rails', '~> 4.0'
+gem 'tailwindcss-rails'
 gem 'thruster', require: false
 gem 'turbo-rails'
 
