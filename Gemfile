@@ -24,7 +24,7 @@ gem 'inline_svg' # Keep after propshaft. Ref: jamesmartin/inline_svg#151
 
 group :development, :test do
   gem 'brakeman', require: false
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug', platforms: %i[mri windows]
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'i18n-tasks', require: false
