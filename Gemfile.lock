@@ -154,7 +154,7 @@ GEM
       actionpack (>= 7.1.0)
       activesupport (>= 7.1.0)
       railties (>= 7.1.0)
-    importmap-rails (2.1.0)
+    importmap-rails (2.2.0)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
