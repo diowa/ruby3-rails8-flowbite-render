@@ -1,0 +1,24 @@
+{
+  "name": "ruby3_rails8_flowbite_render",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">= 22.0",
+    "pnpm": "^10.15.0"
+  },
+  "packageManager": "pnpm@10.15.0",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.28.0",
+    "@stylistic/stylelint-plugin": "^4.0.0",
+    "eslint": "^9.33.0",
+    "neostandard": "^0.12.2",
+    "stylelint": "^16.23.1",
+    "stylelint-order": "^7.0.0"
+  },
+  "browserslist": [
+    "chrome >= 111",
+    "firefox >= 128",
+    "safari >= 16.4",
+    "ios_saf >= 16.4"
+  ]
+}
