@@ -39,16 +39,16 @@ jobs:
       cancel-in-progress: true
 
     steps:
-    - uses: actions/checkout@v5
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: .ruby-version
-        bundler-cache: false
-    - name: Bundle leak
-      run: |
-        gem install bundler-leak
-        bundle leak check --update
+      - uses: actions/checkout@v5
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: false
+      - name: Bundle leak
+        run: |
+          gem install bundler-leak
+          bundle leak check --update
 
   importmap_audit:
     name: importmap audit
@@ -60,12 +60,32 @@ jobs:
       cancel-in-progress: true
 
     steps:
-    - uses: actions/checkout@v5
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: .ruby-version
-        bundler-cache: true
+      - uses: actions/checkout@v5
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
 
-    - name: Scan for security vulnerabilities in JavaScript dependencies
-      run: bin/importmap audit
+      - name: Scan for security vulnerabilities in Importmap dependencies
+        run: bin/importmap audit
+
+  pnpm_audit:
+    name: pnpm audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    concurrency:
+      group: "${{ github.workflow }} / pnpm_audit @ ${{ github.ref }}"
+      cancel-in-progress: true
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+      - name: Scan for security vulnerabilities in JavaScript dependencies
+        run: pnpm audit
