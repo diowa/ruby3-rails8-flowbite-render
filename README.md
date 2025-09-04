@@ -14,7 +14,7 @@ This is an opinionated starter web application based on the following technology
 * [Puma][:puma-url]
 * [PostgreSQL][:postgresql-url]
 * [RSpec][:rspec-url]
-* [Font Awesome SVG (via Iconmap)][:fontawesome-url]
+* [Font Awesome SVG 7.0.1][:fontawesome-url] (via [Iconmap for Rails](:iconmap-url))
 * [RuboCop][:rubocop-url]
 * [RuboCop RSpec][:rubocop-rspec-url]
 * [stylelint][:stylelint-url]
@@ -22,6 +22,7 @@ This is an opinionated starter web application based on the following technology
 
 [:flowbite-url]: https://flowbite.com/
 [:fontawesome-url]: https://fontawesome.com
+[:iconmap-url]: https://github.com/tagliala/iconmap-rails
 [:i18n-tasks-url]: https://github.com/glebm/i18n-tasks
 [:postgresql-url]: https://www.postgresql.org
 [:puma-url]: https://puma.io
