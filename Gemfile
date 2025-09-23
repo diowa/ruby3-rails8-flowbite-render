@@ -11,7 +11,7 @@ gem 'jbuilder'
 gem 'kamal', require: false
 gem 'pg', '~> 1.6'
 gem 'propshaft'
-gem 'puma', '>= 5.0'
+gem 'puma'
 gem 'solid_cable'
 gem 'solid_cache'
 gem 'solid_queue'
