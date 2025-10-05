@@ -14,7 +14,7 @@ This is an opinionated starter web application based on the following technology
 * [Puma][:puma-url]
 * [PostgreSQL][:postgresql-url]
 * [RSpec][:rspec-url]
-* [Font Awesome SVG 7.0.1][:fontawesome-url] (via [Iconmap for Rails](:iconmap-url))
+* [Font Awesome SVG 7.1.0][:fontawesome-url] (via [Iconmap for Rails](:iconmap-url))
 * [RuboCop][:rubocop-url]
 * [RuboCop RSpec][:rubocop-rspec-url]
 * [stylelint][:stylelint-url]
