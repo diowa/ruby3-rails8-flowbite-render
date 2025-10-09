@@ -7,10 +7,10 @@ Always reference these instructions first and fallback to search or bash command
 ## Prerequisites
 
 Install these dependencies on the system before starting:
-- Ruby 3.4.5 (specified in .ruby-version)
-- Node.js >= 22.0 (specified in package.json)
+- Ruby (version specified in .ruby-version)
+- Node.js (version specified in package.json)
 - PostgreSQL
-- pnpm ^10.15.0 (specified in package.json)
+- pnpm (version specified in package.json)
 - bundler gem
 
 ## Bootstrap and Setup
@@ -39,9 +39,9 @@ pnpm install
 bundle exec rails db:prepare
 ```
 
-**CRITICAL TIMING NOTE**: 
+**CRITICAL TIMING NOTE**:
 - First-time bundle install takes approximately 45 seconds to 1 minute
-- First-time pnpm install takes approximately 30 seconds  
+- First-time pnpm install takes approximately 30 seconds
 - Subsequent installs are much faster (cached dependencies)
 - NEVER CANCEL these operations as they are downloading and compiling dependencies
 
@@ -132,23 +132,23 @@ Follow the project's commit message standards as outlined in [CONTRIBUTING.md](.
 - **Reference**: Follow [How to Write a Git Commit Message](https://cbea.ms/git-commit/#seven-rules)
 - **Format**: Use imperative mood ("Add feature" not "Added feature")
 - **Length**: Limit subject line to 50 characters, body lines to 72 characters
-- **Structure**: 
+- **Structure**:
   ```
   Short summary (50 chars max)
-  
+
   Detailed explanation if needed (72 chars per line)
-  
+
   - Use bullet points for multiple changes
   - Reference issues with "Fixes #123" or "Closes #456"
   ```
 - **Examples**:
   ```
   Fix temporal query performance regression
-  
+
   Add support for Rails 8.0 compatibility
-  
+
   Update dependencies for security patches
-  
+
   Fixes #123
   ```
 - **Best Practices**:
@@ -160,21 +160,21 @@ Follow the project's commit message standards as outlined in [CONTRIBUTING.md](.
 **Branch Naming Conventions**:
 Use descriptive branch prefixes to categorize work:
 - `feature/` - New features and enhancements
-- `bugfix/` - Bug fixes and corrections  
+- `bugfix/` - Bug fixes and corrections
 - `chore/` - Maintenance, refactoring, CI/CD, dependency updates
 
 ## Key File Locations
 
 **Application Structure**:
 - `app/controllers/` - Rails controllers
-- `app/views/` - ERB template files 
+- `app/views/` - ERB template files
 - `app/models/` - ActiveRecord models
 - `app/javascript/` - JavaScript source files and importmap entry points
 - `app/assets/` - Static assets (images, etc.)
 
 **Configuration**:
 - `config/routes.rb` - Application routes
-- `config/database.yml` - Database configuration  
+- `config/database.yml` - Database configuration
 - `config/importmap.rb` - Importmap configuration
 - `package.json` - Node.js dependencies and scripts
 - `Gemfile` - Ruby gem dependencies
@@ -194,7 +194,7 @@ Use descriptive branch prefixes to categorize work:
 | Command | Purpose | Time | Notes |
 |---------|---------|------|-------|
 | `bundle install` | Install Ruby gems | ~45s first, ~5s cached | NEVER CANCEL |
-| `pnpm install` | Install Node packages | ~30s first, ~2s cached | NEVER CANCEL |  
+| `pnpm install` | Install Node packages | ~30s first, ~2s cached | NEVER CANCEL |
 | `bundle exec rails db:prepare` | Set up database | ~2 sec | Creates dev/test DBs |
 | `bundle exec rails server` | Start dev server | instant | Runs on port 3000 |
 | `bundle exec rake lint` | Run all linters | ~6 sec | Must pass before commit |
@@ -220,29 +220,27 @@ The Rails master key for development is stored in encrypted credentials.
 
 ## Environment Requirements
 
-- Ruby: 3.4.5 (specified in .ruby-version)
-- Node.js: >= 22.0 (specified in package.json)  
-- pnpm: ^10.15.0 (specified in package.json)
+- Ruby: version specified in .ruby-version
+- Node.js: version specified in package.json
+- pnpm: version specified in package.json
 - PostgreSQL: Any recent version
-- Rails: 8.0.2.1 (latest within major version)
-- Tailwind CSS: 4.1.11
-- Flowbite: 3.1.2
+- Rails: 8.0 (latest within major version)
 
 ## Technology Stack Details
 
 **Frontend**:
-- **Tailwind CSS 4.1.11**: Utility-first CSS framework
-- **Flowbite 3.1.2**: Component library built on Tailwind CSS
+- **Tailwind CSS 4.x**: Utility-first CSS framework
+- **Flowbite 3.x**: Component library built on Tailwind CSS
 - **Font Awesome SVG**: Icons via iconmap-rails
 - **Importmap**: JavaScript bundling and module loading
 - **Stimulus**: JavaScript framework for Rails
 - **Turbo**: Single-page application framework
 
 **Backend**:
-- **Rails 8.0.2.1**: Web application framework
+- **Rails 8.0**: Web application framework
 - **PostgreSQL**: Primary database
 - **Solid Queue**: Job processing (Rails 8 default)
-- **Solid Cache**: Caching (Rails 8 default) 
+- **Solid Cache**: Caching (Rails 8 default)
 - **Solid Cable**: WebSocket connections (Rails 8 default)
 - **Puma**: Web server
 
