@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '8.0.3'
+gem 'rails', '8.1.0'
 
 gem 'bootsnap', require: false
 gem 'iconmap-rails'
@@ -21,6 +21,8 @@ gem 'thruster', require: false
 gem 'turbo-rails'
 
 gem 'inline_svg' # Keep after propshaft. Ref: jamesmartin/inline_svg#151
+
+gem 'openssl' # TODO: remove when rails/importmap-rails#318 will be fixed
 
 group :development, :test do
   gem 'brakeman', require: false
