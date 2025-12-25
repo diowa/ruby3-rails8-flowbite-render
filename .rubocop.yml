@@ -7,7 +7,7 @@ plugins:
   - rubocop-rspec_rails
 
 AllCops:
-  TargetRailsVersion: 8.0
+  TargetRailsVersion: 8.1
   TargetRubyVersion: 3.4
   NewCops: enable
   DisplayStyleGuide: true
