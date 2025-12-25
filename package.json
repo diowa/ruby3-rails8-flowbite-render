@@ -8,11 +8,11 @@
   },
   "packageManager": "pnpm@10.15.0",
   "devDependencies": {
-    "@babel/eslint-parser": "^7.28.0",
+    "@babel/eslint-parser": "^7.28.5",
     "@stylistic/stylelint-plugin": "^4.0.0",
-    "eslint": "^9.33.0",
+    "eslint": "^9.39.2",
     "neostandard": "^0.12.2",
-    "stylelint": "^16.23.1",
+    "stylelint": "^16.26.1",
     "stylelint-order": "^7.0.0"
   },
   "browserslist": [
