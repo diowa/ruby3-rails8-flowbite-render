@@ -13,7 +13,7 @@
     "eslint": "^9.39.2",
     "neostandard": "^0.12.2",
     "stylelint": "^16.26.1",
-    "stylelint-order": "^7.0.0"
+    "stylelint-order": "^7.0.1"
   },
   "browserslist": [
     "chrome >= 111",
